@@ -5,6 +5,8 @@ services:
     volumes:
       - ./swagger/api.yaml:/swagger/api.yaml
       - ./api-skeleton/:/app
+    environment:
+      - PHP_POST_PROCESS_FILE="/usr/local/bin/prettier --write"
 
   swagger-api:
     image: danielgtaylor/apisprout
